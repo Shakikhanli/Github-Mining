@@ -1,12 +1,13 @@
 import json
 from difflib import SequenceMatcher
+from builtins import len, open
 
 preferred_users = []
 found_repos = []
 
 
-def similar(a, b):
-    return SequenceMatcher(None, a, b).ratio()
+def similar(repo1, repo2):
+    return SequenceMatcher(None, repo1, repo2).ratio()
 
 
 def front_back(front_list, back_list):

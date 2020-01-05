@@ -3,6 +3,8 @@ from datetime import datetime
 from datetime import timedelta
 import numpy as np
 import pandas as pd
+from builtins import len, int
+from locale import str
 
 fail_list = []
 

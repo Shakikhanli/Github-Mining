@@ -1,10 +1,6 @@
 import requests
 import json
 import time
-import pandas as pd
-from pandas.io.json import json_normalize
-import urllib3
-import os
 
 client_id = '6ff8da2ae4d057a6d048'  # you have to write your own id
 client_secret = '3b6868e71ae5ef6d14a5d8114a3638e84bc22c7a'  # you have to write your own secret
@@ -35,8 +31,8 @@ def collect_page(search_date):
         file_content = res.json()
         items_list.append(file_content['items'])
     else:
-        print('Application going to sleep for 60 seconds...')
-        time.sleep(60)
+        print('Application going to sleep for 65 seconds...')
+        time.sleep(65)
     print(first_url)
     while 'next' in res.links.keys():  # taking all url through pagination until it ends
         if internet_on(first_url):
@@ -50,8 +46,8 @@ def collect_page(search_date):
                 print('Api ratio is exceed. Application going to sleep for 70 seconds...')
                 break
         else:
-            print('Application going to sleep for 60 seconds...')
-            time.sleep(60)
+            print('Application going to sleep for 65 seconds...')
+            time.sleep(65)
         print(first_url)
 
     print("All repository pages are collected...")
@@ -102,8 +98,8 @@ for date in define_date('2017', '07', '01'):
                     data.append(json_file)
                     json_string = ''
                 except:
-                    print('Api ratio is exceed. Application going to sleep for 70 seconds...')
-                    time.sleep(70)
+                    print('Api ratio is exceed. Application going to sleep for 65 seconds...')
+                    time.sleep(65)
                     continue
     except:
         print('There is an ERROR !!!   Application going to sleep for 60 seconds')

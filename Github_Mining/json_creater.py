@@ -1,9 +1,10 @@
 import requests
 import json
 import pandas as pd
-import pandas
 from pandas.io.json import json_normalize
 import os
+from builtins import len, range
+from locale import str
 
 commit_pages = []  # list of urls of commit pages
 data = []
@@ -56,17 +57,17 @@ Function to collect all sha of all commits
 
 def collect_sha(pages):
     list_commit_sha = []
-    list_commits = []
-    for x in pages:
-        page = requests.get(x)
-        list_commits.append(page.json())
-    print("amount of pages: " + str(len(list_commits)))
-    for x in list_commits:  # here sha of each commit is taken
-        for each_commit in x:
+    list_commit_pages = []
+    for each_page in pages:
+        page = requests.get(each_page)
+        list_commit_pages.append(page.json())
+    print("amount of pages: " + str(len(list_commit_pages)))
+    for each_commit_page in list_commit_pages:  # here sha of each commit is taken
+        for each_commit in each_commit_page:
             try:
                 list_commit_sha.append(each_commit['sha'])
             except:
-                print("This commit has problem: " + x['message'])
+                print("This commit has problem: " + each_commit_page['message'])
 
     print("All commit sha collection is done ... ")
     print(" ")

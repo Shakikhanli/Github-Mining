@@ -1,9 +1,7 @@
-import requests
-import json
 import pandas as pd
 import pandas
-from pandas.io.json import json_normalize
 import os
+from locale import str
 
 list_commit_sha = []  # list to save sha of commit
 commit_pages = []  # list of urls of commit pages
