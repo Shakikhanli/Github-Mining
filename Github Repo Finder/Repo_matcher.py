@@ -20,7 +20,7 @@ def front_back(front_list, back_list):
     return matched_repos
 
 
-with open('/Json files/' + 'Separated repos(2016-2017).json', 'r') as filehandle:
+with open('/Json files/' + 'Separated repos((2017-01-01)---(2017-06-30).json', 'r') as filehandle:
     file_content = json.load(filehandle)
 
 for user in file_content:

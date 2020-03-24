@@ -55,9 +55,9 @@ def collect_page(search_date):
 
 
 def define_date(start_year, start_month, start_day):
-    end_year = '2017'
-    end_month = '12'
-    end_day = '31'
+    end_year = '2019'
+    end_month = '06'
+    end_day = '30'
     dates = []
     condition = True
     while condition:
@@ -85,7 +85,7 @@ def define_date(start_year, start_month, start_day):
     return dates
 
 
-for date in define_date('2017', '07', '01'):
+for date in define_date('2019', '01', '01'):
     print('Processing of pages for date:' + date + ' is started.')
     try:
         for each_item_list in collect_page(date):
@@ -112,5 +112,5 @@ for date in define_date('2017', '07', '01'):
 # result = df.sort_values('owner_name')
 # Export = df.to_json('/Json files/' + '2019/09/01' + r'.json')
 
-with open('/Json files/' + '(2017-07-01)---(2017-12-31).json', 'w') as file:
+with open('/Json files/' + '(2019-01-01)---(2019-06-30).json', 'w') as file:
     json.dump(data, file)
